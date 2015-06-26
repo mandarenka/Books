@@ -1,0 +1,50 @@
+<div class="single"><p id="notice"><%= notice %></p>
+
+<div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6  col-lg-offset-1  col-sm-push-3  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <p class="lead">
+  <strong>Tytuł:</strong>
+  <%= @book.title %>
+</p>
+
+<p class="lead">
+  <strong>Autor:</strong>
+  <%= link_to @book.author.full_name, @book.author %>
+</p>
+
+<p class="lead">
+  <strong>Opis:</strong>
+  <%= @book.description %>
+</p>
+
+<p class="lead">
+  <strong>Kategorie:</strong>
+  <% @book.categories.each do |category| %>
+  <%= link_to category.name, category %>
+  <% end %>
+</p>
+
+
+                </div>
+                <div class="col-lg-3  col-sm-pull-6  col-sm-6">
+
+                <%= image_tag @book.photo.url %><br>
+
+                                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+
+
+
+</div>

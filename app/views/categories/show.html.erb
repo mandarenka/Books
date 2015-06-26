@@ -1,0 +1,31 @@
+ <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-11 col-sm-11">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading"><%= @category.name %></h2>
+                    
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Książki:</strong><ul>
+  <% @category.books.each do |book| %>
+   <li> <%=link_to book.title, book %> </li>
+  <% end %>
+</ul>
+
+</p>
+
+
+
+
+</div>
+                
+            </div>
+
+        </div>

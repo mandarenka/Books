@@ -1,0 +1,17 @@
+<div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-11  col-sm-11">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+
+
+<% if !@books.empty? %> 
+	<h2 class="section-heading">Znalezione książki</h2>
+	<% @books.each do |book| %>
+		<p class="lead"><%= link_to book.title, book %></p>
+        <% end %>
+<% end %>
+</div></div></div></div>

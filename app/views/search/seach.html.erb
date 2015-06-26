@@ -1,0 +1,3 @@
+ <%= form_tag '/search/index', method: :get, :html => {:class => "search input"} do %>
+<li id="search"><%= text_field_tag :q, nil, :class => "search input", :placeholder => "tytuł lub autor", :type => "search"  %>
+<%= button_tag "wyszukaj"%></li><% end %>

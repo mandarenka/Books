@@ -1,0 +1,45 @@
+#encoding: utf-8
+<div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+
+ <%= form_tag '/11_zygmunt/zakazane/search/index', method: :get, :html => {:class => "search input"} do %>
+<%= text_field_tag :q, nil, :class => "search input", :placeholder => "wyszukaj tytuł", :type => "search"  %><% end %>
+
+                    <h2 class="section-heading">Książki</h2>
+
+
+    <% @books.each do |book| %> <br>
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-1  col-sm-6">
+
+                    <p><strong>Tytuł: </strong><%= link_to book.title, book %></p>
+        
+      <p> <strong>Autor:</strong> <% if book.author %> <%= link_to book.author.full_name, book.author %><% end %></p>
+      <p><strong>Kategorie:</strong> <%  book.categories.each do |category| %><%= link_to category.name, category %><% end %></p>
+        <p><%= book.description[0,200] %>...<br><br><%= link_to "Czytaj więcej", book %></p>
+
+
+        
+      
+        <p></p>
+                </div>
+
+                <div class="col-lg-2 col-sm-pull-6  col-sm-6">
+                    
+                    <%= link_to(image_tag(book.photo.url), book) %><p><br><hr><br></p>
+                  
+                </div>
+
+                <% end %>
+            </div>
+<%= link_to 'Dodaj nową książkę', new_book_path %>
+        </div>
+        <!-- /.container -->
+
+    </div>
+                

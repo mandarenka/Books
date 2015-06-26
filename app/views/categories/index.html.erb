@@ -1,0 +1,27 @@
+<div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-11  col-sm-11">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                  Kategorie</h2>
+                    <% @categories.each do |category| %>
+      <div class="one">
+        <p><strong><%= link_to category.name , category %></strong></p>
+        
+        </p>
+      </div>
+    <% end %>
+<br>
+
+<%= link_to 'Dodaj kategorię', new_category_path %></div>
+
+                </div>
+                
+            </div>
+
+        </div>
+

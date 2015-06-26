@@ -1,0 +1,31 @@
+<div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+
+                                        
+                    <h2 class="section-heading">Autorzy</h2>
+
+                    <% @authors.each do |author| %>
+                    <div class="col-lg-5 col-lg-offset-1  col-sm-6">
+      <p><strong><%= link_to author.full_name, author %></strong></p>
+       </p></div>
+ 
+
+
+               
+                <div class="col-lg-1 col-sm-pull-6  col-sm-6">
+                    <%= link_to(image_tag(author.avatar.url), author) %><br><br><br>
+
+                </div>
+                   <% end %>
+                   
+            </div>
+<%= link_to 'Dodaj autora', new_author_path %>
+        </div>
+
+
